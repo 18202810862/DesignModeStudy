@@ -1,0 +1,28 @@
+@startuml
+class ImageLoader{
++ displayImage(String imageView):void
+~ setImageCache(ImageCache):void
+}
+
+ImageLoader ..o ImageCache
+
+interface ImageCache{
++ put(url,bitmap):void
++ get(url):Bitmap
+}
+
+class MemoryCache implements ImageCache{
++ put(url,bitmap):void
++ get(url):Bitmap
+}
+
+class DiskCache implements ImageCache{
++ put(url,bitmap):void
++ get(url):Bitmap
+}
+
+class DoubleCache implements ImageCache{
++ put(url,bitmap):void
++ get(url):Bitmap
+}
+@enduml
